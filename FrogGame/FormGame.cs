@@ -12,7 +12,8 @@ namespace FrogGame
     public partial class FormGame : Form
     {
         Image imgFrogLeft, imgFrogRight, imgLeaf;
-        int[] fields = { 1, 1, 1, 1, 0, 2, 2, 2, 2 };
+        int[] field = { 1, 1, 1, 1, 0, 2, 2, 2, 2 };
+        int positionLeaf = 4;
         public FormGame()
         {
             InitializeComponent();
@@ -34,9 +35,9 @@ namespace FrogGame
 
         void showFrogs()
         {
-            for (int i = 0; i < fields.Length; i++)
+            for (int i = 0; i < field.Length; i++)
             {
-                switch (fields[i])
+                switch (field[i])
                 {
                     case 1: dataGridFrogs[i, 0].Value = imgFrogLeft; break;
                     case 2: dataGridFrogs[i, 0].Value = imgFrogRight; break;
@@ -48,7 +49,10 @@ namespace FrogGame
         }
         private void dataGridFrogs_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            field[positionLeaf] = field[e.ColumnIndex];
+            field[e.ColumnIndex] = 0;
+            positionLeaf = e.ColumnIndex;
+            showFrogs();
         }
     }
 }
