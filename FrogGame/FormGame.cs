@@ -11,9 +11,15 @@ namespace FrogGame
 {
     public partial class FormGame : Form
     {
+        Bitmap imgFrogLeft, imgFrogRight, imgLeaf;
         public FormGame()
         {
             InitializeComponent();
+        }
+
+        private void dataGridFrogs_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

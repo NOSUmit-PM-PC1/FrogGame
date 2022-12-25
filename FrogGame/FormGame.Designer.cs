@@ -49,6 +49,7 @@
             this.dataGridFrogs.AllowUserToResizeColumns = false;
             this.dataGridFrogs.AllowUserToResizeRows = false;
             this.dataGridFrogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridFrogs.ColumnHeadersVisible = false;
             this.dataGridFrogs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
@@ -64,6 +65,7 @@
             this.dataGridFrogs.Name = "dataGridFrogs";
             this.dataGridFrogs.Size = new System.Drawing.Size(800, 150);
             this.dataGridFrogs.TabIndex = 0;
+            this.dataGridFrogs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridFrogs_CellClick);
             // 
             // Column1
             // 
@@ -135,7 +137,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridFrogs);
             this.Name = "FormGame";
-            this.Text = "Form1";
+            this.Text = "Лягушки попрыгушки";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFrogs)).EndInit();
             this.ResumeLayout(false);
 

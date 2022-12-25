@@ -75,9 +75,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="images\frog1.png" />
-    <Content Include="images\frog2.png" />
-    <Content Include="images\list.png" />
+    <None Include="images\frogLeft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="images\frogRight.png" />
+    <Content Include="images\leaf.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
