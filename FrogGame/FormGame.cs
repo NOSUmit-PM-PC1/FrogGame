@@ -49,10 +49,17 @@ namespace FrogGame
         }
         private void dataGridFrogs_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            field[positionLeaf] = field[e.ColumnIndex];
-            field[e.ColumnIndex] = 0;
-            positionLeaf = e.ColumnIndex;
-            showFrogs();
+            if (Math.Abs(positionLeaf - e.ColumnIndex) <= 2)
+            {
+                field[positionLeaf] = field[e.ColumnIndex];
+                field[e.ColumnIndex] = 0;
+                positionLeaf = e.ColumnIndex;
+                showFrogs();
+            }
+            else 
+            {
+                MessageBox.Show("Низя так ходить!");
+            }
         }
     }
 }
