@@ -11,12 +11,41 @@ namespace FrogGame
 {
     public partial class FormGame : Form
     {
-        Bitmap imgFrogLeft, imgFrogRight, imgLeaf;
+        Image imgFrogLeft, imgFrogRight, imgLeaf;
+        int[] fields = { 1, 1, 1, 1, 0, 2, 2, 2, 2 };
         public FormGame()
         {
             InitializeComponent();
+            imgFrogLeft = Bitmap.FromFile("images/FrogLeft.png");
+            imgFrogRight = Bitmap.FromFile("images/FrogRight.png");
+            imgLeaf = Bitmap.FromFile("images/Leaf.png");
+
         }
 
+        private void FormGame_Load(object sender, EventArgs e)
+        {
+
+            dataGridFrogs.Rows.Add();
+            dataGridFrogs.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.Width = 9 * imgLeaf.Width;
+            dataGridFrogs.Height = imgLeaf.Height;
+            showFrogs();
+        }
+
+        void showFrogs()
+        {
+            for (int i = 0; i < fields.Length; i++)
+            {
+                switch (fields[i])
+                {
+                    case 1: dataGridFrogs[i, 0].Value = imgFrogLeft; break;
+                    case 2: dataGridFrogs[i, 0].Value = imgFrogRight; break;
+                    case 0: dataGridFrogs[i, 0].Value = imgLeaf; break;
+                }
+
+                
+            }
+        }
         private void dataGridFrogs_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 

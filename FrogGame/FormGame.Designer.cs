@@ -62,7 +62,10 @@
             this.Column9});
             this.dataGridFrogs.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridFrogs.Location = new System.Drawing.Point(0, 0);
+            this.dataGridFrogs.MultiSelect = false;
             this.dataGridFrogs.Name = "dataGridFrogs";
+            this.dataGridFrogs.RowHeadersVisible = false;
+            this.dataGridFrogs.RowTemplate.Height = 10;
             this.dataGridFrogs.Size = new System.Drawing.Size(800, 150);
             this.dataGridFrogs.TabIndex = 0;
             this.dataGridFrogs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridFrogs_CellClick);
@@ -138,6 +141,7 @@
             this.Controls.Add(this.dataGridFrogs);
             this.Name = "FormGame";
             this.Text = "Лягушки попрыгушки";
+            this.Load += new System.EventHandler(this.FormGame_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFrogs)).EndInit();
             this.ResumeLayout(false);
 
